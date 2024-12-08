@@ -22,6 +22,10 @@ public class OrderService {
         order.setAmount(request.getAmount());
         Order savedOrder = orderRepository.save(order);
 
+        // save event in database
+        eventService.saveEvent("order_created", savedOrder.getId().toString(), request.getAmount().toString());
+
+        // publish event to kafka
         OrderCreatedEvent event = new OrderCreatedEvent(savedOrder.getId().toString(), "CREATED", request.getAmount());
         eventService.publishEvent("order_created", event);
     }

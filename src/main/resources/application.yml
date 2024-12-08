@@ -12,17 +12,17 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  kafka:
-    consumer:
-      group-id: event-sourcing-group
-      auto-offset-reset: earliest
-      enable-auto-commit: false
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    bootstrap-servers: 18.220.74.171:9093
-    admin:
-      auto-create: true
+#  kafka:
+#    consumer:
+#      group-id: event-sourcing-group
+#      auto-offset-reset: earliest
+#      enable-auto-commit: false
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    bootstrap-servers: 35.238.236.140:9093
+#    admin:
+#      auto-create: true
 
 server:
   port: 8083
