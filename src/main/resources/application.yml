@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: spring-project_owner
+    url: jdbc:postgresql://ep-old-dew-a4ti3ae2-pooler.us-east-1.aws.neon.tech/spring-project?sslmode=require
+    password: WVjs76KOLTNQ
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    consumer:
+      group-id: event-sourcing-group
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    bootstrap-servers: 18.220.74.171:9093
+    admin:
+      auto-create: true
+
+server:
+  port: 8083
