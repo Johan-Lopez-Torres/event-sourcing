@@ -20,6 +20,9 @@ public class KafkaConsumerConfig {
     @Value("${spring.kafka.consumer.bootstrap-servers}")
     private String BOOTSTRAP_SERVERS_CONFIG;
 
+    @Value("${spring.kafka.consumer.group-id}")
+    private String GROUP_ID_CONFIG = "order_events";
+
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> config = new HashMap<>();
