@@ -12,6 +12,18 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    properties:
+      mail:
+        debug: 'true'
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: smtp.example.com
+    username: johanlopezsre@gmal.com
+    password: Johan140502
+    port: '587'
 #  kafka:
 #    consumer:
 #      group-id: event-sourcing-group
